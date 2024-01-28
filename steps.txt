@@ -35,3 +35,7 @@ npm install nodemon
 npm install mongoose
 
 from mongodb.com get the string to write
+
+.env banayi and connect krlia
+
+models folder in api and then user.models.js to add schema of tables to it
