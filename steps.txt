@@ -1,0 +1,34 @@
+1> terminal -> npm create vite@latest client(folder name)
+
+choose react -> js + swc
+
+  cd client
+  npm install (to use npm install node.js) // to install dependencies
+  (on hold)npm run dev
+
+2> installing tailwind CSS  (download tailwind using vite)
+
+npm install -D tailwindcss postcss autoprefixer
+
+3> npx tailwindcss init -p (initialize config files)
+
+
+///// basically all steps are on this website
+https://tailwindcss.com/docs/guides/vite
+
+i dont need app.css cos i am using tailwin css
+
+->>>> installl extension ES7 react/redux...
+
+////*** npm run dev ****/////
+
+
+
+## ROUTES and create pages
+
+terminal -> npm i react-router-dom
+
+#### for backend (server)
+# in api folder run "npm init -y"
+npm install express
+npm install nodemon
