@@ -32,3 +32,6 @@ terminal -> npm i react-router-dom
 # in api folder run "npm init -y"
 npm install express
 npm install nodemon
+npm install mongoose
+
+from mongodb.com get the string to write
