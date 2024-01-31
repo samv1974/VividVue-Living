@@ -1,7 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-
+import userRouter from './routes/user.route.js'
 // initialize dotenv
 dotenv.config();
 
@@ -16,5 +16,18 @@ const app = express();
 app.listen(3000,() => {
     console.log('server is running on port 3000!!!!')
 });
+app.use('/api/user',userRouter);
+// we want to communnicate between server and client
+// hence req is from browser and res is from server
+// app.get('/',(req,res) => {
+//     // req.json({})
 
+// })
+
+// sp basically we dont wanna make routes everywhere hence we will make a seperate folder named Router
 // now lets connect with db
+
+
+// app.use("/api/user", userRouter)
+
+
