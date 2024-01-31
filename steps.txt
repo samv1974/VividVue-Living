@@ -40,3 +40,7 @@ from mongodb.com get the string to write
 
 models folder in api and then user.models.js to add schema of tables to it
 ->>>>crete a test api route
+
+git remote set-url origin https://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@github.com/samv1974/VividVue-Living.git
+
+npm install bcryptjs
