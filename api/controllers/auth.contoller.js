@@ -1,8 +1,9 @@
 import User from "../models/user.model.js"
 
 import bcrypt from 'bcryptjs'
+import { errorHandler } from "../utils/error.js"
 
-export const signup = async(req,res) => {
+export const signup = async(req,res,next) => {
     // console.log(req.body)
     const {username,email,password} = req.body
 
@@ -16,8 +17,10 @@ export const signup = async(req,res) => {
         res.status(201).json('user crated succesfully');
 
     }catch(e){
-        res.status(500).json(e.message)
+        // res.status(500).json(e.message)
         // we will have a function to handle the error
+        next(e); // error handling from our middleware (thats why we used next)
+        // next(errorHandler(550,'error from a function'))
     }
 
 } 
