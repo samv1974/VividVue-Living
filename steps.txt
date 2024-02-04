@@ -44,3 +44,14 @@ models folder in api and then user.models.js to add schema of tables to it
 git remote set-url origin https://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@github.com/samv1974/VividVue-Living.git
 
 npm install bcryptjs
+
+package json - webtoken to generate cookies for authentication
+npm install jsonwebtoken (in root folder)
+
+JWT_SECRET = 'samvasishatneerajsandhudishantgarg'
+
+
+
+
+
+

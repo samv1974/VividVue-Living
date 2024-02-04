@@ -45,7 +45,6 @@ export default function SignUp(){
       setLoading(false)
       setErrors(error.message);
     }
-
     }
   // console.log(formData);
   return (
