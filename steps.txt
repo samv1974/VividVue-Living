@@ -51,7 +51,10 @@ npm install jsonwebtoken (in root folder)
 JWT_SECRET = 'samvasishatneerajsandhudishantgarg'
 
 
+// we have to downlaoad redux toolkit to accesss data at different places such as profiles page etc.
 
+in the website get this code https://redux-toolkit.js.org/tutorials/quick-start
 
+npm install @reduxjs/toolkit react-redux
 
-
+screate a fil app/store.js 
