@@ -50,5 +50,16 @@ export const signin = async(req,res,next) => {
         next(e); // error handling from our middleware (thats why we used next)
         // next(errorHandler(550,'error from a function'))
     }
-
 } 
+
+export const google = async (req,res,next) => {
+    try{
+        const user = await User.findOne({email:req.body.email})
+        if(user){
+            const token = jwt.sign({id:user._id},process.env.JWT_SECRET);
+            const {password:pass,...rest}=user._doc
+        }
+    }catch(e){
+        next(error)
+    }
+}
