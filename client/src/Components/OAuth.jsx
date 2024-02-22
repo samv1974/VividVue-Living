@@ -7,13 +7,14 @@ import { useNavigate } from 'react-router-dom'
 export default function OAuth() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    // 
     const handleGoogleClick = async() =>{
         try{
             const provider = new GoogleAuthProvider()
             const auth = getAuth(app)
 
             const result = await signInWithPopup(auth, provider)
-            const res = await fetch('/api/auth/google',{
+            const res = await fetch('/api/auth/google',{ // create this endpoint at the end in the backend 
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json',

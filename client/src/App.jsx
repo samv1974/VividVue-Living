@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import Home from './pages/Home'
-import Signin from './pages/Signin'
+import Signin from './pages/signin'
 import SignOut from './pages/SignUp'
 import Profile from './pages/profile'
 import About from './pages/about'
@@ -18,10 +18,11 @@ export default function App() {
       <Route path='/' element={<Home/>}/>
       <Route path='/sign-in' element={<Signin/>}/>
       <Route path='/sign-up' element={<SignOut/>}/>
-      <Route path='/profile' element={<Profile/>}/>
       <Route path='/about' element={<About/>}/>
 
-      <Route element={<PrivateRoute/>}/>
+      <Route element={<PrivateRoute/>}>
+      <Route path='/profile' element={<Profile/>}/>
+      </Route>
       <Route path='/register' element={<Register/>}/>
       </Routes>
     </BrowserRouter>
