@@ -58,3 +58,8 @@ in the website get this code https://redux-toolkit.js.org/tutorials/quick-start
 npm install @reduxjs/toolkit react-redux
 
 screate a fil app/store.js 
+
+firebase storage rules allow read;
+      allow write: if
+      request.resource.size < 2*1024*1024 &&
+      request.resource.contentType('image/.*') and then publish
