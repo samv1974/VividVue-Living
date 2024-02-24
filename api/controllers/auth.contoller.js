@@ -62,10 +62,10 @@ export const google = async (req,res,next) => {
             // Sam Vasishat samvasishat90416
         }
         else{
-            const generatedPassword = Math.random().toString.slice(-8) + Math.random().toString(36).slice(-8) // last 8 digit no of password generated with 26 letts plus 1-9 numbers
+            const generatedPassword = Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8) // last 8 digit no of password generated with 26 letts plus 1-9 numbers
             const hashedPassword = bcrypt.hashSync(generatedPassword,10) // will hash the password 10
             const newUser = new User({
-                username:req.body.name.split(' ').join('').toLowerCase() + Math.random().toString(36).slice(-8),
+                username:req.body.name.split(" ").join("").toLowerCase() + Math.random().toString(36).slice(-8),
                 email:req.body.email,
                 password:hashedPassword,
                 avatar:req.body.photo

@@ -1,6 +1,8 @@
 import {FaSearch} from 'react-icons/fa'
 import {Link, useNavigate} from 'react-router-dom'
 import { useSelector } from 'react-redux'
+
+
 export default function Header() {
     const {currentUser} = useSelector(state => state.user)
     const navigate = useNavigate();
@@ -27,8 +29,8 @@ export default function Header() {
 
                 </Link>
 
-                <Link to='/sign-in'>
-                    {currentUser?(
+                <Link to='/profile'>
+                    {currentUser ? (
                         <img className='rounded-full h-7 w-7 object-cover' src={currentUser.avatar} alt='profile' />
                     )
                     : (

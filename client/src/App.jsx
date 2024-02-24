@@ -18,10 +18,11 @@ export default function App() {
       <Route path='/' element={<Home/>}/>
       <Route path='/sign-in' element={<Signin/>}/>
       <Route path='/sign-up' element={<SignOut/>}/>
-      <Route path='/profile' element={<Profile/>}/>
       <Route path='/about' element={<About/>}/>
 
-      <Route element={<PrivateRoute/>}/>
+      <Route element={<PrivateRoute/>}>
+      <Route path='/profile' element={<Profile/>}/>
+      </Route>
       <Route path='/register' element={<Register/>}/>
       </Routes>
     </BrowserRouter>
