@@ -8,6 +8,7 @@ import About from './pages/about'
 import Header from './Components/header'
 import Register from './pages/register'
 import PrivateRoute from './Components/PrivateRoute'
+import Footer from './Components/Footer'
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
       </Route>
       <Route path='/register' element={<Register/>}/>
       </Routes>
+      <Footer/>
     </BrowserRouter>
   )
 }
