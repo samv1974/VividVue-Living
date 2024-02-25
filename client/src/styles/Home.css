@@ -65,8 +65,12 @@
   }
   
   .section img {
-    max-width: 90%;
+    max-width: 100%; /* Ensure images don't exceed their container's width */
+    max-height: 100%; /* Ensure images don't exceed their container's height */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 8px;
+    margin: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.5s ease;
   }
@@ -89,4 +93,28 @@
   .footer a:hover {
     border-color: #666;
   }
+  .car {
+  position: fixed;
+  top: 20px; /* Initial position at the top */
+  right: 20px; /* Initial position at the right */
+  width: 170px;
+  margin-top: 5%;
+  height: auto;
+  transition: top 0.1s ease-out, bottom 0.1s ease-out; /* Add transition for smooth movement */
+}
+
+.car.bottom {
+  top: auto; /* Reset top position */
+  bottom: 20px; /* Move to the bottom */
+}
+  
+  @keyframes moveCar {
+    0%, 100% {
+      transform: translateY(0); /* Keep the car at the same position */
+    }
+    50% {
+      transform: translateY(10vh); /* Move the car slightly up */
+    }
+  }
+  
   

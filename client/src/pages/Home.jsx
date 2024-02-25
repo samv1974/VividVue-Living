@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import image1 from '../assets/image1.png';
 import image2 from '../assets/image2.png';
 import image3 from '../assets/image3.png';
+import carImage from '../assets/image4.png'; // Import the car image
 import '../styles/Home.css';
 
 const Home = () => {
@@ -10,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const position = window.pageYOffset;
+      const position = window.scrollY;
       setScrollPosition(position);
     };
 
@@ -57,6 +58,8 @@ const Home = () => {
       <div className="footer">
         <Link to="/contact">Contact Us</Link>
       </div>
+      {/* Car animation */}
+      <img className="car" src={carImage} alt="Car" style={{ transform: `translateY(${scrollPosition}px)` }} />
     </div>
   );
 };
