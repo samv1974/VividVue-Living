@@ -10,6 +10,7 @@ import Register from './pages/register'
 import PrivateRoute from './Components/PrivateRoute'
 import CreateListing from './pages/CreateListing'
 import UpdateListing from './pages/UpdateListing.jsx';
+import Listing from './pages/listing';
 
 import Footer from './Components/Footer'
 
@@ -23,6 +24,7 @@ export default function App() {
       <Route path='/sign-in' element={<Signin/>}/>
       <Route path='/sign-up' element={<SignOut/>}/>
       <Route path='/about' element={<About/>}/>
+      <Route path='/listing/:listingId' element={<Listing />} />
 
       <Route element={<PrivateRoute/>}>
       <Route path='/profile' element={<Profile/>}/>
