@@ -1,72 +1,61 @@
+/* Footer Container */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
 
-.footer-container {
-    background-color: #333;
-    color: #fff;
-    padding: 50px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  .footer-section {
-    flex: 1;
-    margin: 0 20px;
-  }
-  
-  .footer-section h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .footer-section p {
-    margin: 0.5rem 0;
-  }
-  
-  .footer-section form {
-    display: flex;
-    margin-top: 1rem;
-  }
-  
-  .footer-section input[type="email"] {
-    width: 200px;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 5px 0 0 5px;
-  }
-  
-  .footer-section button {
-    background-color: #fff;
-    color: #333;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-  }
-  
-  .social-icons a {
-    color: #fff;
-    margin-right: 10px;
-  }
-  
-  .social-icons a:hover {
-    color: #ccc;
-  }
-  
-  .quick-links-section ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .quick-links-section ul li {
-    margin-bottom: 0.5rem;
-  }
-  
-  .quick-links-section ul li a {
-    color: #ccc;
-    text-decoration: none;
-  }
-  
-  .quick-links-section ul li a:hover {
-    color: #fff;
-  }
-  
+/* Footer Content */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* Footer Section */
+.footer-section {
+  flex: 1;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #444;
+}
+
+.footer-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.footer-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #fff;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+}

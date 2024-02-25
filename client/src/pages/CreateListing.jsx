@@ -8,7 +8,7 @@ import {
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
+import '../styles/createListing.css'
 export default function CreateListing() {
   const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
@@ -365,4 +365,4 @@ export default function CreateListing() {
       </form>
     </main>
   );
-}
+              }
