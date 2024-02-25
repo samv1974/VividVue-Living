@@ -1,0 +1,72 @@
+
+.footer-container {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .footer-section {
+    flex: 1;
+    margin: 0 20px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-section p {
+    margin: 0.5rem 0;
+  }
+  
+  .footer-section form {
+    display: flex;
+    margin-top: 1rem;
+  }
+  
+  .footer-section input[type="email"] {
+    width: 200px;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .footer-section button {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    margin-right: 10px;
+  }
+  
+  .social-icons a:hover {
+    color: #ccc;
+  }
+  
+  .quick-links-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .quick-links-section ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .quick-links-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+  }
+  
+  .quick-links-section ul li a:hover {
+    color: #fff;
+  }
+  

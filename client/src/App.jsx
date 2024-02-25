@@ -11,6 +11,7 @@ import PrivateRoute from './Components/PrivateRoute'
 import CreateListing from './pages/CreateListing'
 import UpdateListing from './pages/UpdateListing.jsx';
 
+import Footer from './Components/Footer'
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
       </Route>
       <Route path='/register' element={<Register/>}/>
       </Routes>
+      <Footer/>
     </BrowserRouter>
   )
 }
