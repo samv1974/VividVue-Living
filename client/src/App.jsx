@@ -11,6 +11,8 @@ import PrivateRoute from './Components/PrivateRoute'
 import CreateListing from './pages/CreateListing'
 import UpdateListing from './pages/UpdateListing.jsx';
 import Listing from './pages/listing';
+import Search from './pages/Search';
+
 
 import Footer from './Components/Footer'
 
@@ -24,6 +26,7 @@ export default function App() {
       <Route path='/sign-in' element={<Signin/>}/>
       <Route path='/sign-up' element={<SignOut/>}/>
       <Route path='/about' element={<About/>}/>
+      <Route path='/search' element={<Search />} />
       <Route path='/listing/:listingId' element={<Listing />} />
 
       <Route element={<PrivateRoute/>}>

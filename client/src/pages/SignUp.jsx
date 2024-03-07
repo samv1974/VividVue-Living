@@ -99,11 +99,25 @@ export default function SignUp() {
       [e.target.id]: e.target.value,
     });
   };
+  const isPasswordValid = (password) => {
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*()-+=^])(?!\s).{8,}$/;
+    return passwordRegex.test(password);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       setLoading(true);
+
+      // Validate password before making the request
+      if (!isPasswordValid(formData.password)) {
+        setLoading(false);
+        setError(
+          'Password must meet the criteria: at least one digit, one upper case alphabet, one lower case alphabet, one special character, and no white space.'
+        );
+        return;
+      }
+
       const res = await fetch('/api/auth/signup', {
         method: 'POST',
         headers: {
