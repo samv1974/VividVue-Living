@@ -55,9 +55,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="footer">
+      {/* <div className="footer">
         <Link to="/contact">Contact Us</Link>
-      </div>
+      </div> */}
       {/* Car animation */}
       <img className="car" src={carImage} alt="Car" style={{ transform: `translateY(${scrollPosition}px)` }} />
     </div>
