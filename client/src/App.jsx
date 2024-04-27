@@ -8,13 +8,12 @@ import About from './pages/About'
 import Header from './Components/Header'
 import Register from './pages/register'
 import PrivateRoute from './Components/PrivateRoute'
+import Footer from './Components/Footer'
 import CreateListing from './pages/CreateListing'
 import UpdateListing from './pages/UpdateListing.jsx';
 import Listing from './pages/listing';
 import Search from './pages/Search';
 
-
-import Footer from './Components/Footer'
 
 export default function App() {
   return (

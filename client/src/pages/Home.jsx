@@ -29,35 +29,35 @@ const Home = () => {
       <div className="content">
         <div className={`section ${scrollPosition < 500 ? 'visible' : ''}`}>
           <div className="section-left">
-            <img src={image1} alt="Section 1" />
+            <img src={image1} alt="Interior Design" />
           </div>
           <div className="section-right">
-            <h2>Section 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h2>Find Your Dream Home</h2>
+            <p>Explore our wide range of properties and find the perfect fit for you and your family.</p>
           </div>
         </div>
         <div className={`section ${scrollPosition >= 500 && scrollPosition < 1000 ? 'visible' : ''}`}>
           <div className="section-left">
-            <h2>Section 2</h2>
-            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h2>Expert Advice</h2>
+            <p>Get expert advice from our real estate professionals to make informed decisions.</p>
           </div>
           <div className="section-right">
-            <img src={image2} alt="Section 2" />
+            <img src={image2} alt="Expert Advice" />
           </div>
         </div>
         <div className={`section ${scrollPosition >= 1000 && scrollPosition < 1500 ? 'visible' : ''}`}>
           <div className="section-left">
-            <img src={image3} alt="Section 3" />
+            <img src={image3} alt="Reliable Service" />
           </div>
           <div className="section-right">
-            <h2>Section 3</h2>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h2>Reliable Service</h2>
+            <p>Experience top-notch customer service and support throughout your real estate journey.</p>
           </div>
         </div>
       </div>
-      <div className="footer">
+      {/* <div className="footer">
         <Link to="/contact">Contact Us</Link>
-      </div>
+      </div> */}
       {/* Car animation */}
       <img className="car" src={carImage} alt="Car" style={{ transform: `translateY(${scrollPosition}px)` }} />
     </div>
