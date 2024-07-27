@@ -17,15 +17,11 @@ export default function CreateListing() {
     imageUrls: [],
     name: '',
     description: '',
-    address: '',
+    City:"",
     type: 'rent',
     bedrooms: 1,
-    bathrooms: 1,
-    regularPrice: 50,
-    discountPrice: 0,
-    offer: false,
-    parking: false,
-    furnished: false,
+    Property: "House",
+    Price: 500,
   });
   const [imageUploadError, setImageUploadError] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -93,35 +89,35 @@ export default function CreateListing() {
   };
 
   const handleChange = (e) => {
-    if (e.target.id === 'sale' || e.target.id === 'rent') {
+    // Handling type change (rent, sale, any)
+    if (e.target.id === 'sale' || e.target.id === 'rent' || e.target.id === 'any') {
       setFormData({
         ...formData,
         type: e.target.id,
       });
     }
 
+    // Handling property type change (land, apartment, house, condo)
     if (
-      e.target.id === 'parking' ||
-      e.target.id === 'furnished' ||
-      e.target.id === 'offer'
+      e.target.id === 'land' ||
+      e.target.id === 'apartment' ||
+      e.target.id === 'house' ||
+      e.target.id === 'condo'
     ) {
       setFormData({
         ...formData,
-        [e.target.id]: e.target.checked,
+        Property: e.target.id,
       });
     }
-
-    if (
-      e.target.type === 'number' ||
-      e.target.type === 'text' ||
-      e.target.type === 'textarea'
-    ) {
+    // Handling text and number inputs (name, description, address, location, bedrooms, Price)
+    if (e.target.type === 'text' || e.target.type === 'number' || e.target.type === 'textarea') {
       setFormData({
         ...formData,
         [e.target.id]: e.target.value,
       });
     }
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -132,6 +128,8 @@ export default function CreateListing() {
         return setError('Discount price must be lower than regular price');
       setLoading(true);
       setError(false);
+
+      console.log("before sending for creation",formData);
       const res = await fetch('/api/listing/create', {
         method: 'POST',
         headers: {
@@ -142,11 +140,13 @@ export default function CreateListing() {
           userRef: currentUser._id,
         }),
       });
+      console.log("this is create listing",res);
       const data = await res.json();
       setLoading(false);
       if (data.success === false) {
         setError(data.message);
       }
+      console.log("this is ccreata bout to navigate to get ",data._id)
       navigate(`/listing/${data._id}`);
     } catch (error) {
       setError(error.message);
@@ -180,15 +180,17 @@ export default function CreateListing() {
             onChange={handleChange}
             value={formData.description}
           />
+       
           <input
             type='text'
-            placeholder='Address'
+            placeholder='City'
             className='border p-3 rounded-lg'
-            id='address'
+            id='City'
             required
             onChange={handleChange}
-            value={formData.address}
+            value={formData.City}
           />
+
           <div className='flex gap-6 flex-wrap'>
             <div className='flex gap-2'>
               <input
@@ -198,8 +200,9 @@ export default function CreateListing() {
                 onChange={handleChange}
                 checked={formData.type === 'sale'}
               />
-              <span>Sell</span>
+              <span>Sale</span>
             </div>
+            
             <div className='flex gap-2'>
               <input
                 type='checkbox'
@@ -210,35 +213,15 @@ export default function CreateListing() {
               />
               <span>Rent</span>
             </div>
-            <div className='flex gap-2'>
-              <input
-                type='checkbox'
-                id='parking'
-                className='w-5'
-                onChange={handleChange}
-                checked={formData.parking}
-              />
-              <span>Parking spot</span>
-            </div>
-            <div className='flex gap-2'>
-              <input
-                type='checkbox'
-                id='furnished'
-                className='w-5'
-                onChange={handleChange}
-                checked={formData.furnished}
-              />
-              <span>Furnished</span>
-            </div>
-            <div className='flex gap-2'>
-              <input
-                type='checkbox'
-                id='offer'
-                className='w-5'
-                onChange={handleChange}
-                checked={formData.offer}
-              />
-              <span>Offer</span>
+
+            <div className='w-5'>
+            <select id="propertyType" name="propertyType">
+            <option value="house">House</option>
+            <option value="land">Land</option>
+            <option value="apartment">Apartment</option>
+            <option value="condo">Condo</option>
+            </select>
+
             </div>
           </div>
           <div className='flex flex-wrap gap-6'>
@@ -255,29 +238,17 @@ export default function CreateListing() {
               />
               <p>Beds</p>
             </div>
+            
             <div className='flex items-center gap-2'>
               <input
                 type='number'
-                id='bathrooms'
-                min='1'
-                max='10'
-                required
-                className='p-3 border border-gray-300 rounded-lg'
-                onChange={handleChange}
-                value={formData.bathrooms}
-              />
-              <p>Baths</p>
-            </div>
-            <div className='flex items-center gap-2'>
-              <input
-                type='number'
-                id='regularPrice'
+                id='Price'
                 min='50'
                 max='10000000'
                 required
                 className='p-3 border border-gray-300 rounded-lg'
                 onChange={handleChange}
-                value={formData.regularPrice}
+                value={formData.Price}
               />
               <div className='flex flex-col items-center'>
                 <p>Regular price</p>
@@ -286,26 +257,7 @@ export default function CreateListing() {
                 )}
               </div>
             </div>
-            {formData.offer && (
-              <div className='flex items-center gap-2'>
-                <input
-                  type='number'
-                  id='discountPrice'
-                  min='0'
-                  max='10000000'
-                  required
-                  className='p-3 border border-gray-300 rounded-lg'
-                  onChange={handleChange}
-                  value={formData.discountPrice}
-                />
-                <div className='flex flex-col items-center'>
-                  <p>Discounted price</p>
-                  {formData.type === 'rent' && (
-                    <span className='text-xs'>($ / month)</span>
-                  )}
-                </div>
-              </div>
-            )}
+            {formData.offer}
           </div>
         </div>
         <div>
